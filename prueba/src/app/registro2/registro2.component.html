@@ -1,0 +1,80 @@
+<section>
+  <div>
+    <h2 class="subtitle">Por favor busque el libro de su interes para mas información</h2>
+  </div>
+  <div class="container-fluid container table table-dark table-striped">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Buscar</span>
+      <input type="text" class="form-control" name="filtrarResultados" [(ngModel)]="filtrarResultados" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <table>
+      <thead>
+        <tr class="title">
+          <td>Imagen</td>
+          <td>Id</td>
+          <td>Nombre</td>
+          <td>Autor</td>
+          <td>Descripcion</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let libro of registros | mostrarRegistros: filtrarResultados" >
+          <td><div><img class="image" src="{{libro.img}}" alt="imagen"></div></td>
+          <td class="identificador">{{libro.id}}</td>
+          <td class="name">{{libro.name}}</td>
+          <td class="autor">{{libro.autor}}</td>
+          <td class="descripcion">{{libro.descripcion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div>
+  <h2 class="tituloform">Para más información envianos tus datos</h2>
+</div>
+<div>
+  <section class="contact">
+    <div class="contact__image-wrapper">
+      <img src="https://img.freepik.com/vector-gratis/tres-estanterias-madera-varios-libros-planos-diseno-web_74855-14536.jpg?w=740&t=st=1662250367~exp=1662250967~hmac=5c3b7ad8734225da8c29236d28362caf2d4a39d90dc69ef5f2814824d2436087" alt="imagenbiblioteca" class="contact__image">
+    </div>
+    <div class="contact__right-side">
+      <h1 class="contact__title">Contactanos</h1>
+      <form action="" class="contact__form-wrapper">
+        <div class="contact__input-line">
+          <label for="name" class="contact__label">Nombre</label>
+          <input type="text" name="name" id="name" class="contact__input" placeholder="Escriba su nombre" pattern="a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" minlength="3" maxlength="64" required>
+        </div>
+        <div class="contact__input-line">
+          <label for="apellido" class="contact__label">Apellidos</label>
+          <input type="text" name="apellido" id="apellido" class="contact__input" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" placeholder="Ingrese sus apellidos" required>
+        </div>
+        <div class="contact__input-line">
+        <label for="telefono" class="contact__label">Telefono</label>
+          <input type="text" name="telefono" id="telefono" class="contact__input" placeholder="Ingrese su telefono" required>
+        </div>
+        <div class="contact__input-line">
+          <label for="email" class="contact__label">Email</label>
+          <input type="email" name="email" id="email" class="contact__input" placeholder="Escriba su correo" size="30px" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" required>
+        </div>
+        <div class="contact__input-line">
+          <label for="fechai" class="contact__label">Fecha de Inicio</label>
+          <input type="date" name="fechai" id="fechai" class="contact__input" required>
+        </div>
+        <div class="contact__input-line">
+          <label for="fechae" class="contact__label">Fecha de Entrega</label>
+          <input type="date" name="fechae" id="fechae" class="contact__input" required>
+        </div>
+        <input type="submit" value="Enviar" class="contact__submit--button">
+      </form>
+    </div>
+  </section>
+</div>
+
+
+  <button type="button" class="btn btn-outline-dark"><a href="/registro/">Atras</a></button>
+
+
+
+
+
+

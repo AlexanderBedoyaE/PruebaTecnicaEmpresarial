@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+<h1 class="titulo">Bienvenido a su biblioteca virtual</h1>
+<table class="table table-striped">
+  <thead>
+    <tr class="cabecera">
+      <th>Id</th>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Autor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let libro of registros'>
+      <td class="id">{{libro.id}}</td>
+      <td><img class="image" src="{{libro.img}}" alt="imagen"></td>
+      <td class="estilosname">{{libro.name}}</td>
+      <td class="estilosautor">{{libro.autor}}</td>
+      <td><button type="button" class="btn btn-outline-dark button"><a routerLink="/registro2/{{libro.id}}" routerLinkActive="activebutton">ver más</a></button></td>
+    </tr>
+  </tbody>
+</table>
